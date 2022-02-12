@@ -3,10 +3,6 @@ import React from 'react'
 import { Ionicons,Entypo,AntDesign,FontAwesome5,MaterialIcons,FontAwesome,SimpleLineIcons,Fontisto } from '@expo/vector-icons';
 import { useState } from 'react';
 
-
-
-
-
 const HomeScreen = () => {
     const data=[]
     const [pressed, setPressed]=useState(false);
@@ -15,12 +11,22 @@ const HomeScreen = () => {
     <View>
         <Image style={styles.image}/>
       <Text style={styles.text}>HomeScreen</Text>
-      <TextInput placeholder="Todo" style={styles.input}/>
-      <TouchableOpacity style={styles.button} onPress={()=>{setPressed(true), setTimeout(()=>{setPressed(false)},2000)}}><Entypo name={pressed?"home":"add-to-list"} size={30}  style={{fontSize:35,color:pressed?"green":"black"}}  /></TouchableOpacity>
+      
+      <TextInput placeholder="Todo" style={styles.input}
+          onChangeText={ (text)=>{data.push(text), console.log(text, data.length)}}
+      />
+      
+      
+      
+      
+      <TouchableOpacity style={styles.button} onPress={()=>{setPressed(true), setTimeout(()=>{setPressed(false)},2000)}}><Ionicons name={pressed?"checkmark-circle":"add-circle-sharp"} size={30}  style={{fontSize:35,color:pressed?"green":"black"}}  /></TouchableOpacity>
 
     </View>
+
   )
+
 }
+
 
 export default HomeScreen
 
@@ -49,3 +55,4 @@ const styles = StyleSheet.create({
         
     }
 })
+
