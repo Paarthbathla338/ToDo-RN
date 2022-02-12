@@ -12,16 +12,8 @@ export default function App() {
   const Tab = createBottomTabNavigator();
 
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} options={{
-          tabBarIcon: ({ color }) => <Entypo name="home" size={30}  color={color} style={{fontSize:35}}  />,
-          }}  />
-        <Tab.Screen name="Profile" component={ProfileScreen} options={{
-          tabBarIcon: ({ color }) => <AntDesign name="profile" size={30}  color={color} style={{fontSize:35}}  />,
-      }} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <HomeScreen/>
+
   );
 }
 

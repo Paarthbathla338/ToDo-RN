@@ -3,7 +3,7 @@ import React from 'react'
 
 const TaskScreen = (props) => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>{props.text}</Text>
     </View>
   )
@@ -11,4 +11,8 @@ const TaskScreen = (props) => {
 
 export default TaskScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+
+    container:{}
+
+})
