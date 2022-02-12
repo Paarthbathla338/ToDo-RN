@@ -4,6 +4,8 @@ import ProfileScreen from './screens/TaskScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './screens/HomeScreen';
+import { Ionicons,Entypo,AntDesign,FontAwesome5,MaterialIcons,FontAwesome,SimpleLineIcons,Fontisto } from '@expo/vector-icons';
+
 
 
 export default function App() {
@@ -12,8 +14,12 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Profile" component={ProfileScreen} />
+        <Tab.Screen name="Home" component={HomeScreen} options={{
+          tabBarIcon: ({ color }) => <Entypo name="home" size={30}  color={color} style={{fontSize:35}}  />,
+          }}  />
+        <Tab.Screen name="Profile" component={ProfileScreen} options={{
+          tabBarIcon: ({ color }) => <AntDesign name="profile" size={30}  color={color} style={{fontSize:35}}  />,
+      }} />
       </Tab.Navigator>
     </NavigationContainer>
   );
