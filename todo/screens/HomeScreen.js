@@ -3,6 +3,7 @@ import React from 'react'
 import { Ionicons,Entypo,AntDesign,FontAwesome5,MaterialIcons,FontAwesome,SimpleLineIcons,Fontisto } from '@expo/vector-icons';
 import { useState } from 'react';
 import TaskScreen from "./TaskScreen"
+import image from "../assets/taks.png"
 
 const HomeScreen = () => {
     const data=[]
@@ -18,7 +19,7 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
-        <Image style={styles.image}/>
+        <Image style={styles.image} source={image}/>
       <Text style={styles.text}>Today's Tasks</Text>
 
 
@@ -113,6 +114,10 @@ const styles = StyleSheet.create({
     },
     container:{
         flex:1,
+    },
+    image:{
+        width:"100%",
+        height:"40%"
     }
 })
 
