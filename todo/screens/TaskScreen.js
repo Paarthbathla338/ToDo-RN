@@ -29,6 +29,8 @@ const styles = StyleSheet.create({
         marginRight:10,
         borderRadius: 40,
         borderWidth:1,
+        borderColor:"#A9A9A9",
+
       },
       itemLeft: {
         flexDirection: 'row',
@@ -40,9 +42,8 @@ const styles = StyleSheet.create({
         height: 24,
         backgroundColor: '#FF0000',
         opacity: 0.8,
-        borderRadius: 5,
+        borderRadius: 6,
         marginRight: 15,
-        borderColor:"#6C63FF"
       },
       itemText: {
         maxWidth: '80%',
