@@ -3,8 +3,12 @@ import React from 'react'
 
 const TaskScreen = (props) => {
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.text}><Text style={styles.text}>{props.text}</Text></TouchableOpacity>
+    <View style={styles.item}>
+      <View style={styles.itemLeft}>
+        <View style={styles.square}></View>
+        <Text style={styles.itemText}>{props.text}</Text>
+      </View>
+      <View style={styles.circular}></View>
     </View>
   )
 }
@@ -13,19 +17,43 @@ export default TaskScreen
 
 const styles = StyleSheet.create({
 
-    container:{
-        marginLeft:40,
-        width:"80%",
-        backgroundColor:"#C1F0F6",
-        padding:15,
-        borderRadius:10,
-        marginBottom:15,
-  },
-  text:{
-    fontSize:15,
-    maxWidth:"80%",
-    fontWeight:"bold",
-  }
-
+    item: {
+        backgroundColor: '#FFF',
+        padding: 15,
+        borderRadius: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginBottom: 20,
+        marginLeft:10,
+        marginRight:10,
+        borderRadius: 40,
+        borderWidth:1,
+      },
+      itemLeft: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        flexWrap: 'wrap'
+      },
+      square: {
+        width: 24,
+        height: 24,
+        backgroundColor: '#FF0000',
+        opacity: 0.8,
+        borderRadius: 5,
+        marginRight: 15,
+        borderColor:"#6C63FF"
+      },
+      itemText: {
+        maxWidth: '80%',
+      },
+      circular: {
+        width: 12,
+        height: 12,
+        borderColor: '#55BCF6',
+        borderWidth: 2,
+        borderRadius: 5,
+      },
+    
 
 })

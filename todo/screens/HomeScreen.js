@@ -1,9 +1,10 @@
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, FlatList } from 'react-native'
 import React from 'react'
 import { Ionicons,Entypo,AntDesign,FontAwesome5,MaterialIcons,FontAwesome,SimpleLineIcons,Fontisto } from '@expo/vector-icons';
 import { useState } from 'react';
 import TaskScreen from "./TaskScreen"
-import image from "../assets/taks.png"
+import Photo from "../assets/tasks.png"
+
 
 const HomeScreen = () => {
     const data=[]
@@ -17,9 +18,13 @@ const HomeScreen = () => {
         console.log(taskItems)    
 }
 
+    const completeTask=(index)=>{
+        let itemCopy=[...taskItems]
+        itemCopy.splice(index,1)
+        setTaskItems(itemCopy)
+    }
   return (
     <View style={styles.container}>
-        <Image style={styles.image} source={image}/>
       <Text style={styles.text}>Today's Tasks</Text>
 
 
@@ -40,11 +45,15 @@ const HomeScreen = () => {
 
       <View style={styles.item}>
 
-    {taskItems.map((item)=>{
-      return <TaskScreen text={item}/>
+    {taskItems.map((item,index)=>{
+      return(
+          <TouchableOpacity key={index} onPress={()=>completeTask(index)}><TaskScreen  text={item}/></TouchableOpacity>
+      ) 
     })}
     </View>
 
+
+    
 
     </View>
 
@@ -57,13 +66,13 @@ export default HomeScreen
 
 const styles = StyleSheet.create({
     text:{
-        fontSize:30,
-        color:'blue',
+        fontSize:25,
+        color:'#6C63FF',
         fontWeight:"bold",
-        marginTop:40,
+        marginTop:50,
         justifyContent:"center",
         alignItems: 'center',
-        marginLeft:100
+        marginLeft:20
 
     },
     input:{
@@ -85,7 +94,7 @@ const styles = StyleSheet.create({
         width:250,
         alignItems: 'center',
         justifyContent:"center",
-        marginTop:20,
+        marginTop:40,
         marginLeft:55,
 
         
@@ -102,7 +111,7 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         borderColor:"#C0C0C0",
         marginLeft:10,
-        marginTop:20,
+        marginTop:40,
 
 
     },
@@ -117,7 +126,8 @@ const styles = StyleSheet.create({
     },
     image:{
         width:"100%",
-        height:"40%"
+        height:"35%",
+
     }
 })
 
