@@ -47,6 +47,8 @@ const styles = StyleSheet.create({
       },
       itemText: {
         maxWidth: '80%',
+        fontWeight: 'bold',
+        fontSize:15
       },
       circular: {
         width: 12,
